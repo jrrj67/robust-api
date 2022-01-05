@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  robust.api:
+    image: ${DOCKER_REGISTRY-}robustapi
+    build:
+      context: .
+      dockerfile: src/Robust.API/Dockerfile
