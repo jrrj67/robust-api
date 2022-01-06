@@ -2,7 +2,22 @@ version: '3.4'
 
 services:
   robust.api:
+    container_name: "api"
     image: ${DOCKER_REGISTRY-}robustapi
     build:
       context: .
       dockerfile: src/Robust.API/Dockerfile
+  
+  db:
+    container_name: "db"
+    image: mcr.microsoft.com/mssql/server
+    environment:
+      - SA_PASSWORD=Pass@word
+      - ACCEPT_EULA=Y
+    ports:
+      - "1433:1433"
+    volumes:
+      - 'my-db:/var/opt/mssql'
+
+volumes:
+  my-db:
