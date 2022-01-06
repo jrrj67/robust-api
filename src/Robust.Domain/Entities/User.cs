@@ -1,4 +1,5 @@
-﻿using Robust.Domain.Validators;
+﻿using Robust.Core.Exceptions;
+using Robust.Domain.Validators;
 
 namespace Robust.Domain.Entities
 {
@@ -28,7 +29,7 @@ namespace Robust.Domain.Entities
                     _errors.Add(error.ErrorMessage);
                 }
 
-                throw new Exception($"Some fields are invalid. {_errors[0]}");
+                throw new DomainException("Some fields are invalid.", _errors);
             }
 
             return true;

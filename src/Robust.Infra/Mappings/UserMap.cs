@@ -21,7 +21,6 @@ namespace Robust.Infra.Mappings
                 .HasMaxLength(80)
                 .HasColumnName("name");
 
-
             builder.Property(x => x.Password)
                 .IsRequired()
                 .HasMaxLength(30)
