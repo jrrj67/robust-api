@@ -16,10 +16,10 @@ namespace Robust.Infra.Context
         {
         }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            optionsBuilder.UseSqlServer("Server=db,1433;Database=db;MultipleActiveResultSets=true;User ID=SA;Password=Pass@word");
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //    optionsBuilder.UseSqlServer("Server=db,1433;Database=db;MultipleActiveResultSets=true;User ID=SA;Password=Pass@word");
+        //}
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

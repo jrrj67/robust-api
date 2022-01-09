@@ -20,7 +20,7 @@ namespace Robust.Services.Services
 
         public async Task<UserDto> Create(UserDto userDto)
         {
-            var userExists = _userRepository.GetByEmail(userDto.Email);
+            var userExists = await _userRepository.GetByEmail(userDto.Email);
 
             if (userExists != null)
             {
@@ -28,8 +28,6 @@ namespace Robust.Services.Services
             }
 
             var user = _mapper.Map<User>(userDto);
-
-            user.Validate();
 
             var userCreated = await _userRepository.Create(user);
 
@@ -95,7 +93,7 @@ namespace Robust.Services.Services
 
         public async Task<UserDto> Update(UserDto userDto)
         {
-            var userExists = _userRepository.GetById(userDto.Id);
+            var userExists = await _userRepository.GetById(userDto.Id);
 
             if (userExists == null)
             {

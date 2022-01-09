@@ -2,17 +2,9 @@
 {
     public class UserDto
     {
-        public long Id { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-
-        public UserDto(long id, string name, string email, string password)
-        {
-            Id = id;
-            Name = name;
-            Email = email;
-            Password = password;
-        }
+        public long Id { get; set; } = default!;
+        public string Name { get; set; } = default!;
+        public string Email { get; set; } = default!;
+        public string Password { get; set; } = default!;
     }
 }

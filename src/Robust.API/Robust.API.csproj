@@ -16,11 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Robust.Infra\Robust.Infra.csproj" />
+    <ProjectReference Include="..\Robust.Services\Robust.Services.csproj" />
   </ItemGroup>
 
 </Project>
