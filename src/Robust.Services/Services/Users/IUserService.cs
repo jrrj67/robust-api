@@ -1,6 +1,6 @@
 ﻿using Robust.Services.Dtos;
 
-namespace Robust.Services.Interfaces
+namespace Robust.Services.Services.Users
 {
     public interface IUserService
     {

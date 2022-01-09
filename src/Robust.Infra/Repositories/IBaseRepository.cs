@@ -1,6 +1,6 @@
 ﻿using Robust.Domain.Entities;
 
-namespace Robust.Infra.Interfaces
+namespace Robust.Infra.Repositories
 {
     public interface IBaseRepository<T> where T : Base
     {

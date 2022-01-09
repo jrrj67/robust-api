@@ -1,11 +1,10 @@
 ﻿using AutoMapper;
 using Robust.Core.Exceptions;
 using Robust.Domain.Entities;
-using Robust.Infra.Interfaces;
+using Robust.Infra.Repositories.Users;
 using Robust.Services.Dtos;
-using Robust.Services.Interfaces;
 
-namespace Robust.Services.Services
+namespace Robust.Services.Services.Users
 {
     public class UserService : IUserService
     {

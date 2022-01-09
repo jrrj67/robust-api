@@ -1,9 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Robust.Domain.Entities;
 using Robust.Infra.Context;
-using Robust.Infra.Interfaces;
 
-namespace Robust.Infra.Repositories
+namespace Robust.Infra.Repositories.Users
 {
     public class UserRepository : BaseRepository<User>, IUserRepository
     {

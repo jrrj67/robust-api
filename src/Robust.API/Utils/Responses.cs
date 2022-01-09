@@ -13,7 +13,7 @@ namespace Robust.API.Utils
                 Data = errors,
             };
         }
-        
+
         public static ResultViewModel ApplicationErrorMessage()
         {
             return new ResultViewModel()

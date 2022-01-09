@@ -12,7 +12,7 @@ namespace Robust.API.ViewModels
 
         [Required(ErrorMessage = "Password is required.")]
         public string Password { get; set; } = default!;
-        
+
         [Required(ErrorMessage = "Confirm password is required.")]
         [Compare(nameof(Password), ErrorMessage = "Confirm password is not equal to password.")]
         public string ConfirmPassword { get; set; } = default!;

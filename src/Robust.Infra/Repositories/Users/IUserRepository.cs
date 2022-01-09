@@ -1,6 +1,6 @@
 ﻿using Robust.Domain.Entities;
 
-namespace Robust.Infra.Interfaces
+namespace Robust.Infra.Repositories.Users
 {
     public interface IUserRepository : IBaseRepository<User>
     {

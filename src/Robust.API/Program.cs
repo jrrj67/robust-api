@@ -3,11 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Robust.API.ViewModels;
 using Robust.Domain.Entities;
 using Robust.Infra.Context;
-using Robust.Infra.Interfaces;
-using Robust.Infra.Repositories;
+using Robust.Infra.Repositories.Users;
 using Robust.Services.Dtos;
-using Robust.Services.Interfaces;
-using Robust.Services.Services;
+using Robust.Services.Services.Users;
 
 var builder = WebApplication.CreateBuilder(args);
 
