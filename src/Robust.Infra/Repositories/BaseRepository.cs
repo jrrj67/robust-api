@@ -23,7 +23,7 @@ namespace Robust.Infra.Repositories
             return obj;
         }
 
-        public virtual async Task<T?> Get(long id)
+        public virtual async Task<T?> GetById(long id)
         {
             var obj = await _context.Set<T>()
                 .AsNoTracking()
@@ -33,7 +33,7 @@ namespace Robust.Infra.Repositories
             return obj.FirstOrDefault();
         }
 
-        public virtual async Task<List<T>> GetAll(long id)
+        public virtual async Task<List<T>> GetAll()
         {
             return await _context.Set<T>()
                 .AsNoTracking()
@@ -42,7 +42,7 @@ namespace Robust.Infra.Repositories
 
         public virtual async Task Remove(long id)
         {
-            var obj = await Get(id);
+            var obj = await GetById(id);
 
             if (obj != null)
             {

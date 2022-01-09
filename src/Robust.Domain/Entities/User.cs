@@ -14,6 +14,8 @@ namespace Robust.Domain.Entities
             Name = name;
             Email = email;
             Password = password;
+
+            Validate();
         }
 
         public override bool Validate()
