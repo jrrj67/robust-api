@@ -101,8 +101,6 @@ namespace Robust.Services.Services.Users
 
             var user = _mapper.Map<User>(userDto);
 
-            user.Validate();
-
             var userUpdated = await _userRepository.Update(user);
 
             return _mapper.Map<UserDto>(userUpdated);
