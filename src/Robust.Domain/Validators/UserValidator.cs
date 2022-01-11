@@ -28,7 +28,7 @@ namespace Robust.Domain.Validators
                 .NotNull().WithMessage("Password can't be null.")
                 .NotEmpty().WithMessage("Password can't be empty.")
                 .MinimumLength(6).WithMessage("Password must have at least 6 characters.")
-                .MaximumLength(30).WithMessage("Password can't have more than 30 characters.");
+                .MaximumLength(255).WithMessage("Password can't have more than 255 characters.");
         }
     }
 }

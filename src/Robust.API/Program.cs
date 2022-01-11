@@ -1,4 +1,5 @@
 using AutoMapper;
+using JogandoBack.API.Data.Services.PasswordHasher;
 using Microsoft.EntityFrameworkCore;
 using Robust.API.ViewModels;
 using Robust.Domain.Entities;
@@ -38,7 +39,10 @@ builder.Services.AddSingleton(autoMapperConfig.CreateMapper());
 #region DI
 
 builder.Services.AddScoped<IUserService, UserService>();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+
+builder.Services.AddScoped<IPasswordHasher, BcryptPasswordHasher>();
 
 #endregion
 

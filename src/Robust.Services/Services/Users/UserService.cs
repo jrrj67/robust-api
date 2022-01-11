@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using JogandoBack.API.Data.Services.PasswordHasher;
 using Robust.Core.Exceptions;
 using Robust.Domain.Entities;
 using Robust.Infra.Repositories.Users;
@@ -10,11 +11,13 @@ namespace Robust.Services.Services.Users
     {
         private readonly IMapper _mapper;
         private readonly IUserRepository _userRepository;
+        private readonly IPasswordHasher _passwordHasher;
 
-        public UserService(IMapper mapper, IUserRepository userRepository)
+        public UserService(IMapper mapper, IUserRepository userRepository, IPasswordHasher passwordHasher)
         {
             _mapper = mapper;
             _userRepository = userRepository;
+            _passwordHasher = passwordHasher;
         }
 
         public async Task<UserDto> Create(UserDto userDto)
@@ -27,6 +30,10 @@ namespace Robust.Services.Services.Users
             }
 
             var user = _mapper.Map<User>(userDto);
+
+            var hashedPassword = _passwordHasher.HashPassword(user.Password);
+
+            user.ChangePassword(hashedPassword);
 
             var userCreated = await _userRepository.Create(user);
 
@@ -100,6 +107,10 @@ namespace Robust.Services.Services.Users
             }
 
             var user = _mapper.Map<User>(userDto);
+
+            var hashedPassword = _passwordHasher.HashPassword(user.Password);
+
+            user.ChangePassword(hashedPassword);
 
             var userUpdated = await _userRepository.Update(user);
 

@@ -23,7 +23,7 @@ namespace Robust.Infra.Mappings
 
             builder.Property(x => x.Password)
                 .IsRequired()
-                .HasMaxLength(30)
+                .HasMaxLength(255)
                 .HasColumnName("password");
 
             builder.Property(x => x.Email)

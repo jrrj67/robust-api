@@ -42,9 +42,10 @@ namespace Robust.API.Controllers
             {
                 return BadRequest(Responses.DomainErrorMessage(ex.Message, ex.Errors));
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                return StatusCode((int)HttpStatusCode.InternalServerError, Responses.ApplicationErrorMessage());
+                //return StatusCode((int)HttpStatusCode.InternalServerError, Responses.ApplicationErrorMessage());
+                return StatusCode(500, ex.Message);
             }
         }
     }

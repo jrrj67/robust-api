@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Robust.Infra.Context;
 
@@ -10,9 +11,10 @@ using Robust.Infra.Context;
 namespace Robust.Infra.Migrations
 {
     [DbContext(typeof(RobustContext))]
-    partial class RobustContextModelSnapshot : ModelSnapshot
+    [Migration("20220111014527_UpdateUserPasswordLength")]
+    partial class UpdateUserPasswordLength
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
